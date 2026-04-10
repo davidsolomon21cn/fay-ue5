@@ -2,172 +2,265 @@
     <br>
     <img src="images/icon.png" alt="Fay">
     <h1>FAY</h1>
-	<h3>UE5 数字人工程(Metahuman)</h3>
+    <h3>UE5 数字人工程(Metahuman)</h3>
 </div>
-
-
-
 
 [此工程是一个完整的UE数字字人开源工程，可以配合Fay数字人框架，实现各种应用场景：虚拟主播、现场推销货、商品导购、语音助理、远程语音助理、数字人互动、数字人面试官及心理测评、贾维斯、Her]（https://github.com/xszyou/Fay ）。
 
-（加入交流群请关注公众号：fay数字人）
+（加入交流群请关注公众号：fay数字人，文档地址：[​‌metahuman(ue) - 飞书云文档](https://qqk9ntwbcit.feishu.cn/wiki/N33FwegdxiRXzCkZlH2czjwvnrg)）
 
+# UE 数字人启动
 
+- 课程ID：course-1775792095810
+- 作者：郭泽斌
+- 版本：1.0.0
+- 章节数：5
+- 播放及修改：https://player.fay-agent.com/
+- 导入课程包：UE 数字人启动.zip
 
-**【10】das唇型版（离线商业唇型）**
+## 封面
 
-![](images/daslips.png)
+![UE 数字人启动 封面](<images/course1/cover.png>)
 
-UE版本：5.3，唇型：das bs 离线商业唇型（进ue交流群下载） ，驱动接口：fay 数字人接口驱动（[‌‌‌‍‌﻿‍‬‌‌‍⁠⁠﻿⁠‬‌﻿⁠‍‌‌‌‬‬﻿数字人接口（10002） - 飞书云文档](https://qqk9ntwbcit.feishu.cn/wiki/UwXEwxJMOiRhX1kWc7tcjPdrngc)）
+## 目录
 
-工程下载： https://pan.baidu.com/s/1tZXYfG8Y9bcrv3zMOO044A?pwd=kbq9 
+1. 机器要求
+2. 安装并启动 Fay 框架
+3. 开麦克风及唤醒、关扬声器
+4. 下载并运行 UE 数字人运行包
+5. 验证连接与对话测试
 
-运行包：https://pan.baidu.com/s/1tDV6XUYJIU2BGHLA-6maYQ?pwd=8rwa 
+## 第1节 机器要求
 
-改进：商业唇型。
+![讲义](<images/course1/section-01-01.png>)
 
-ue工程选择指引：[‍‬‬‌‍‌⁠‬‬‌‌‬‬‍‬‍‍⁠﻿⁠‍⁠⁠﻿metahuman(3d) - 飞书云文档](https://qqk9ntwbcit.feishu.cn/wiki/N33FwegdxiRXzCkZlH2czjwvnrg)
 
+本教程要求主机配置不低于：RTX 2050显卡、7代i7、16G内存、100G硬盘、win 10以上操作系统。
 
+```
+本教程要求主机配置不低于：RTX 2050显卡、7代i7、16G内存、100G硬盘、win 10以上操作系统。
+```
 
+## 第2节 安装并启动 Fay 框架
 
+![讲义](<images/course1/section-02-01.png>)
 
-## **一、使用逻辑**
 
-1、[如何进行抖音直播](https://www.bilibili.com/video/BV1r3411Z7St/?spm_id_from=333.999.0.0&vd_source=1364af6ac23a05600acd8f8415936944)
+启动 UE 数字人的第一步，是安装并启动 Fay 框架。
 
-2、[如何进行B站直播](https://www.bilibili.com/video/BV14h4y1N716/?spm_id_from=333.999.0.0&vd_source=1364af6ac23a05600acd8f8415936944)
+Fay 是本次数字人方案的核心驱动框架，负责处理语音识别、对话生成以及语音合成等关键环节。
 
-3、[如何进行人机交互](https://blog.csdn.net/aa84758481/article/details/132204938?spm=1001.2014.3001.5502)
+请先按照右侧代码块中提供的官方文档网址，完成 Fay 的下载与安装。官方文档中包含了完整的环境依赖说明和安装步骤，请严格按照要求操作。
 
-4、[OVRLipsync唇形算法代码](https://pan.baidu.com/s/1ph8mzpZ3aYMI8HFa8-6prA?pwd=tin1)
+安装完成后，打开 Fay 的主界面。你会看到一个简洁的控制台页面，左侧菜单包含了消息、人设、MCP 等功能入口。
 
-（以工程7为例）
+在 Fay 主页上，左下角有一个醒目的绿色圆形开机按钮。点击这个按钮，就可以一键启动 Fay 的核心服务。
 
-## **二、UE工程说明**
+启动成功后，Fay 的状态指示灯会亮起，代表系统已经进入运行状态，准备好与 UE 数字人进行对接了。
 
-1、[UE基本操作及数字人工程模块组成](https://blog.csdn.net/aa84758481/article/details/132204938?spm=1001.2014.3001.5502)
+```
+# Fay 数字人框架官方文档
+# 请按照以下网址的说明完成 Fay 的下载、安装与启动
 
-2、[UE数字人工程运行逻辑及程序逻辑](https://blog.csdn.net/aa84758481/article/details/132335739?spm=1001.2014.3001.5502)
+https://qqk9ntwbcit.feishu.cn/wiki/V5qcwlikKiehoYkAPhYcmBPAnAc
 
-（以工程7为例）
+# 安装完成后，点击 Fay 主页左下角的绿色圆形按钮即可启动 Fay 服务。
+```
 
- ## **三、其他版本**
+## 第3节 开麦克风及唤醒、关扬声器
 
-**【1】UE4.27 男模陈升**
+![讲义](<images/course1/section-03-01.png>)
 
-![](images/20230901234331.png)
 
-UE版本：4.27，唇型：固定动画 ，驱动接口：接收音频文件路径、接收情绪值
+Fay 启动完成之后，接下来要做的一件非常关键的事情，就是确认麦克风处于开启状态，扬声器关闭，及唤醒开启。
+今天演示的这个ue数字人模型并没有独立的拾音模块，得依赖本地机器上的fay。但有独立的声音播放模块，会播放fay合城的音频，但这音频仍须在同一台机器上。
+在 Fay 的唤醒功能关闭之后，如果你没有专业的拾音硬件支持，那么 Fay 可能会把数字人自己发出的声音重新拾取进去，造成回声循环，严重影响对话体验。
 
-[下载工程](https://pan.baidu.com/s/1cAa7IrzjyHMv__wAx_0WsA?pwd=645g)
+配置完成后，你就可以尝试对着麦克风说一句"你好，你在吗"，验证一下 Fay 是否能够正常接收到你的声音。
 
-[Windows一键运行包](https://pan.baidu.com/s/1CsJ647uV5rS2NjQH3QT0Iw?pwd=s9s8)
+## 第4节 下载并运行 UE 数字人运行包
 
+![讲义](<images/course1/section-04-01.png>)
 
 
-**【2】UE5.03 Girl_night**
+Fay 一侧的准备工作完成之后，接下来我们需要下载并启动 UE 数字人的运行包。
 
-![](images/20230901233804.png)
+请到以下网址下载最新版本的 UE 数字人运行包。下载完成后，将压缩包解压到一个独立的目录中，然后双击运行其中的 exe 可执行文件。
 
-UE版本：5.0.3，唇型：Metahuman SDK ，驱动接口：接收文本、接收情绪值
+运行包启动之后，UE 数字人会在一个独立的窗口中呈现。你会看到一位身着白色职业装的虚拟形象站在舞台上。
 
-[下载工程](https://pan.baidu.com/s/1frJA1ChdpPlmN4G_KWm4Rg?pwd=crzj)
+数字人启动后，会自动尝试连接到本地已经运行的 Fay 服务。整个连接过程是自动完成的，你不需要手动进行任何网络配置或地址设置。这种自动连接的设计大大简化了部署流程，让非技术用户也能够快速上手，降低了搭建一套完整数字人系统的门槛。
 
+```
+# UE 数字人运行包下载地址
+# 下载后请解压并双击运行其中的 exe 可执行文件
+# 数字人启动后会自动连接到本地运行中的 Fay 服务
 
+ https://pan.baidu.com/s/1olc-Jd9rH-PcWkdBK2Hc6Q?pwd=kwyd
+```
 
-**【3】UE5.03 本地唇形Girl_lip**
+## 第5节 验证连接与对话测试
 
-![](images/lucky.png)
+![讲义](<images/course1/section-05-01.png>)
 
-UE版本：5.0.3，唇型：视音素动画 ，驱动接口：接收音频文件路径、接音音频视音素序列、接收情绪值
 
-[下载工程](https://pan.baidu.com/s/1S_0LZE2X37pVNWEvc4GiLA?pwd=ehbf )
+最后一步，是验证 UE 数字人与 Fay 的连接是否成功，并进行一次完整的对话测试。
 
+UE 数字人启动后，请回到 Fay 的管理界面进行查看。在左上角 Fay 的 Logo 位置，你会看到几个状态指示灯——如果第二个灯点亮，就代表 UE 数字人已经成功连接到了 Fay 服务，双端通信链路已经完全建立。
 
+确认连接成功之后，你就可以对着麦克风向数字人打招呼了。尝试说一句："你好，请介绍一下你自己。"然后观察数字人的反应。
 
-**【4】UE5.03 8月版**
+如果你看到数字人出现了口型与表情的变化，并且从 UE 数字人的运行窗口听到了清晰的语音回复，那么恭喜你，你已经成功完成了 UE 数字人的启动与对接！
 
-![](images/image-20230817100447582.png)
+到这里，整个 UE 数字人启动流程就全部完成了。你现在拥有了一个可以听、可以说、可以互动的数字人伙伴，接下来就可以开始探索更多有趣的应用场景了。
 
-UE版本：5.0.3，唇型：视音素动画 ，驱动接口：接收音频文件路径、接音音频视音素序列、接收情绪值、接收控制台日志、接收用户问题文本、回复说话完成状态
 
-[下载工程](https://pan.baidu.com/s/1TtZD0jrG5xRqAMtydjBbew?pwd=mryc)
+# UE 数字人工程编辑
 
-[视频说明](https://www.bilibili.com/video/BV1mz4y1M7pq/)
+- 课程ID：course-1775804088429
+- 作者：郭泽斌
+- 版本：1.0.0
+- 章节数：11
+- 播放及修改：https://player.fay-agent.com/
+- 导入课程包：UE 数字人工程编辑.zip
 
+## 封面
 
+![UE 数字人工程编辑 封面](<images/course2/cover.png>)
 
-**【5】9月版**
+## 目录
 
-![ue数字人9月版](images/ue5_2309.png)
+1. 机器要求
+2. 安装并启动 Fay 框架
+3. 开麦克风及唤醒、关扬声器
+4. 安装epic game launcher
+5. 安装ue 5.6 引擎
+6. 下载并解压 UE 数字人工程包
+7. 安装插件
+8. 启动工程
+9. 检查插件
+10. 运行工程预览
+11. 验证连接与对话测试
 
-UE版本：5.0.3，唇型：视音素BS ，驱动接口：接收音频文件路径、接音音频视音素序列、接收情绪值、接收控制台日志、接收用户问题文本、回复说话完成状态，改进：新模型、使用[唇形BS](./唇形bs.docx)
+## 第1节 机器要求
 
-工程下载地址：https://pan.baidu.com/s/10ASvGYQMpSrZV8OtXCmDdw?pwd=plz1 
+![讲义](<images/course2/section-01-01.png>)
 
-唇型BS说明：https://www.bilibili.com/video/BV1G94y1V75W
 
+本教程要求主机配置不低于：RTX 3060显卡、10代i7、32G内存、200硬盘、win 10以上操作系统。
 
+```
+本教程要求主机配置不低于：RTX 3060显卡、10代i7、32G内存、200硬盘、win 10以上操作系统。
+```
 
-**【6】10月版**
+## 第2节 安装并启动 Fay 框架
 
-![ue数字人9月版](images/20231127222021.png)
+![讲义](<images/course2/section-02-01.png>)
 
-UE版本：5.0.3，唇型：优化视音素 ，驱动接口：接收音频文件路径、接音音频视音素序列、接收情绪值、接收控制台日志、接收用户问题文本、回复说话完成状态，
 
-改进：全新模型、[提供VR运行包（视频）](https://b23.tv/1W0sJZv)、优化唇形、改进web socket 状态显示逻辑、降低性能资源消耗。
+启动 UE 数字人的第一步，是安装并启动 Fay 框架。
 
-工程下载地址：链接：https://pan.baidu.com/s/1Fal4ZvL-pL5g_bdsWJIcaw?pwd=4bz8  
+Fay 是本次数字人方案的核心驱动框架，负责处理语音识别、对话生成以及语音合成等关键环节。
 
-VR运行包下载地址(含普通运行包)：https://pan.baidu.com/s/1m7a-METJFaFmwyRKwDeTRQ?pwd=ztmh 
+请先按照右侧代码块中提供的官方文档网址，完成 Fay 的下载与安装。官方文档中包含了完整的环境依赖说明和安装步骤，请严格按照要求操作。
 
-VR效果：https://b23.tv/1W0sJZv
+安装完成后，打开 Fay 的主界面。你会看到一个简洁的控制台页面，左侧菜单包含了消息、人设、MCP 等功能入口。
 
+在 Fay 主页上，左下角有一个醒目的绿色圆形开机按钮。点击这个按钮，就可以一键启动 Fay 的核心服务。
 
+启动成功后，Fay 的状态指示灯会亮起，代表系统已经进入运行状态，准备好与 UE 数字人进行对接了。
 
-**【7】emily**
+```
+# Fay 数字人框架官方文档
+# 请按照以下网址的说明完成 Fay 的下载、安装与启动
 
-![ue数字人9月版](images/emily.png)
+https://qqk9ntwbcit.feishu.cn/wiki/V5qcwlikKiehoYkAPhYcmBPAnAc
 
-UE版本：5.0.3，唇型：视音素 ，驱动接口：接收音频文件路径、接音音频视音素序列、接收情绪值、接收控制台日志、接收用户问题文本、回复说话完成状态，
+# 安装完成后，点击 Fay 主页左下角的绿色圆形按钮即可启动 Fay 服务。
+```
 
-改进：全新模型、提供站姿绿幕包、支持打断功能。
+## 第3节 开麦克风及唤醒、关扬声器
 
-工程下载地址：https://pan.baidu.com/s/1lUPK5G0-BLwfgu3LrfulCQ?pwd=wesr 
+![讲义](<images/course2/section-03-01.png>)
 
-运行包下载地址：https://pan.baidu.com/s/1VaWmA8_0s8wmlaWBCUihog?pwd=02dx 
 
+Fay 启动完成之后，接下来要做的一件非常关键的事情，就是确认麦克风处于开启状态，扬声器关闭，及唤醒开启。
+今天演示的这个ue数字人模型并没有独立的拾音模块，得依赖本地机器上的fay。但有独立的声音播放模块，会播放fay合城的音频，但这音频仍须在同一台机器上。
+在 Fay 的唤醒功能关闭之后，如果你没有专业的拾音硬件支持，那么 Fay 可能会把数字人自己发出的声音重新拾取进去，造成回声循环，严重影响对话体验。
 
+配置完成后，你就可以尝试对着麦克风说一句"你好，你在吗"，验证一下 Fay 是否能够正常接收到你的声音。
 
-**【8】5.3_azure**
-![ue数字人](images/new.png)
+## 第4节 安装epic game launcher
 
-ue版本：5.3
+![讲义](<images/course2/section-04-01.png>)
 
-唇型：azure ，音频：azure，ASR：azure，驱动接口：Fay及其他gpt兼容接口。
 
-插件：AZSpeech(key在metahuman本体蓝图上配置)
+接下来，我们到ue官网https://www.epicgames.com/  下载 epic installer ，并完成安装。
 
-改进：全新模型、支持最新5.3引擎、使用azure全家桶、支持与Fay异地、支持网页推流、支持打包android、ios及pc客户端。
+```
+ue官网：https://www.epicgames.com/
+```
 
-运行包: https://pan.baidu.com/s/1ZxsjVTB1nh89JJv3L5JmHg?pwd=k57d 
+## 第5节 安装ue 5.6 引擎
 
-工程包：https://pan.baidu.com/s/1xweuSUckmHLgcxO1RbY8yg?pwd=q8zv
+![讲义](<images/course2/section-05-01.png>)
 
 
+接下来，我们打开epic game launcher,选中左侧“虚幻引擎”栏，再从顶栏选择“库”，点击引擎版本那里的加号，在下方出现的引擎方块下拉选择版本5.6，点击安装，等待安装完成。
 
-**【9】Fay5_4_Oct_azure**
+```
+注：作者图示里没有5.6是因为已经安装过
+```
 
-![ue数字人](images/5_4.png)
+## 第6节 下载并解压 UE 数字人工程包
 
-ue版本：5.4
+![讲义](<images/course2/section-06-01.png>)
 
-唇型：azure ，音频：azure，ASR：azure，驱动接口：Fay及其他gpt兼容接口。
 
-插件：FayConnector、Runtime Audio lmporter、AZSpeech(key在metahuman本体蓝图上配置)
-![ue数字人](images/5_4cj.png)
+接下来我们需要下载并启动 UE 数字人的工程包。
 
-工程包：https://pan.baidu.com/s/1Gxzi_DgST7Jh90s6tGOlew?pwd=32fe
+请到以下网址下载最新版本的 UE 数字人工程包。下载完成后，将压缩包解压到一个独立的目录中备用。
 
+```
+https://pan.baidu.com/s/1olc-Jd9rH-PcWkdBK2Hc6Q?pwd=kwyd
+```
 
+## 第7节 安装插件
+
+5.6引擎安装完成后，可到epic launcher搜索并安装图中插件。当然，你也可向fay数字人社区工作人员索取插件包。把插件解压到数字人工程的plugins目录即可。
+
+## 第8节 启动工程
+
+![讲义](<images/course2/section-08-01.png>)
+
+
+点击目录中的uproject文件，等待启动完成，此时应注意c盘留有100g以上空间，否则很可能会加载失败。
+
+## 第9节 检查插件
+
+![讲义](<images/course2/section-09-01.png>)
+
+
+工程启动后点击菜单“工具”，选择“插件”，再选择已安装，确保刚才的4个插件已经处于选中状态。
+
+## 第10节 运行工程预览
+
+![讲义](<images/course2/section-10-01.png>)
+
+
+关闭插件后，点击上方“运行”按钮，将看到数字人处于预览运行状态。数字人会自动连接上fay的。
+
+## 第11节 验证连接与对话测试
+
+![讲义](<images/course2/section-11-01.png>)
+
+
+最后一步，是验证 UE 数字人与 Fay 的连接是否真正成功，并进行一次完整的对话测试。
+
+UE 数字人启动后，请回到 Fay 的管理界面进行查看。在左上角 Fay 的 Logo 位置，你会看到几个状态指示灯——如果第二个灯点亮，就代表 UE 数字人已经成功连接到了 Fay 服务，双端通信链路已经完全建立。
+
+确认连接成功之后，你就可以对着麦克风向数字人打招呼了。尝试说一句："你好，请介绍一下你自己。"然后观察数字人的反应。
+
+如果你看到数字人出现了口型与表情的变化，并且从 UE 数字人的运行窗口听到了清晰的语音回复，那么恭喜你，你已经成功完成了 UE 数字人的启动与对接！
+
+到这里，整个 UE 数字人启动流程就全部完成了。你现在拥有了一个可以听、可以说、可以互动的数字人伙伴，接下来就可以开始探索更多有趣的应用场景了。
