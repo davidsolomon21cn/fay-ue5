@@ -222,7 +222,7 @@ ue官网：https://www.epicgames.com/
 请到以下网址下载最新版本的 UE 数字人工程包。下载完成后，将压缩包解压到一个独立的目录中备用。
 
 ```
-https://pan.baidu.com/s/1olc-Jd9rH-PcWkdBK2Hc6Q?pwd=kwyd
+https://pan.baidu.com/s/1aApeAiIwGNvPXxR-gBj_MQ?pwd=q2jw
 ```
 
 ## 第7节 安装插件
